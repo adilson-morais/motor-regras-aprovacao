@@ -1,0 +1,25 @@
+{
+  "name": "motor-regras-aprovacao",
+  "version": "1.0.0",
+  "description": "Motor de avaliacao de regras de aprovacao configuraveis, com trilha de auditoria por decisao.",
+  "main": "src/app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.5.1"
+  }
+}
