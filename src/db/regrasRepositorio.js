@@ -5,9 +5,13 @@ function criarRegra(db, regra) {
        VALUES (@nome, @campo, @operador, @valor_comparado, @acao, @prioridade, @ativa)`
     )
     .run({
-      prioridade: 0,
-      ativa: 1,
-      ...regra,
+      nome: regra.nome,
+      campo: regra.campo,
+      operador: regra.operador,
+      valor_comparado: regra.valor_comparado,
+      acao: regra.acao,
+      prioridade: regra.prioridade ?? 0,
+      ativa: regra.ativa ?? 1,
     });
 
   return resultado.lastInsertRowid;
