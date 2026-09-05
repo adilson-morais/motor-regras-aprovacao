@@ -7,9 +7,7 @@ const {
 } = require('../db/solicitacoesRepositorio');
 const { avaliarSolicitacao } = require('../services/motorRegras');
 
-// Função fábrica, não um router pronto: recebe "db" de fora, pelo
-// mesmo motivo de sempre — permite testar as rotas com um banco em
-// memória, sem depender do arquivo real.
+// Função fábrica
 function criarRotas(db) {
   const router = express.Router();
 

@@ -22,8 +22,7 @@ describe('avaliarRegra', () => {
   });
 
   it('compara número da solicitação com texto vindo do banco', () => {
-    // valor_comparado sempre chega como texto do SQLite, mesmo em
-    // comparações numéricas — sem normalizarValor, isso quebraria.
+    // valor_comparado sempre chega como texto do SQLite
     const regra = { campo: 'valor', operador: '==', valor_comparado: '5000' };
     expect(avaliarRegra(regra, { valor: 5000 })).toBe(true);
   });

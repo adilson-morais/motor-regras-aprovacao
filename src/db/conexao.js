@@ -6,9 +6,7 @@ const CAMINHO_PADRAO = path.join(__dirname, '..', '..', 'motor-regras.db');
 function criarConexao(caminhoDoBanco) {
   const db = new Database(caminhoDoBanco);
 
-  // WAL melhora concorrência de leitura/escrita — recomendação padrão
-  // do próprio better-sqlite3 para uso normal (não faz diferença
-  // relevante num banco em memória, mas não atrapalha).
+  // WAL melhora concorrência de leitura/escrita 
   db.pragma('journal_mode = WAL');
 
   db.exec(`

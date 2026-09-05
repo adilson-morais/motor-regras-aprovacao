@@ -7,10 +7,6 @@ const OPERADORES = {
   '!=': (a, b) => a !== b,
 };
 
-// O valor que vem do banco é sempre texto (coluna TEXT), mas o campo
-// da solicitação pode ser um número de verdade (ex: valor: 5000).
-// Sem essa normalização, "5000" === 5000 seria falso em JavaScript,
-// mesmo sendo logicamente a mesma coisa.
 function normalizarValor(valor) {
   const comoNumero = Number(valor);
   return valor !== '' && !Number.isNaN(comoNumero) ? comoNumero : valor;
@@ -39,9 +35,7 @@ function avaliarSolicitacao(solicitacao, regras) {
     }
   }
 
-  // Nenhuma regra bateu: padrão é aprovar. É uma decisão de design
-  // (poderia ser "encaminhar_para_revisao" por padrão, sendo mais
-  // conservador) — fica registrado aqui como escolha explícita.
+  // Nenhuma regra bateu: padrão é aprovar.
   return { acao: 'aprovar', regraId: null };
 }
 
